@@ -57,11 +57,11 @@ const displaypage =(posts)=>{
                 <div class="card-body">
                 <h5 class="card-title">${post.title}</h5>
                 <p class="card-text"> ${post.details.slice(0, 300)}</p>
-                <div class="d-flex justify-content-between mt-5">
+                <div class="d-lg-flex d-sm-block  justify-content-between mt-5">
                 <h5 class="card-text"><img src="${post.author.img}" alt="mdo" width="32" height="32" class="rounded-circle">
                  ${post.author.name === null ? 'No Found.':post.author.name }</h5>
-                    <p> <i class="fa-regular fa-eye"></i> ${post.total_view === null ? 'No watching': post.total_view}</p>
-                    <button onclick="newsDeteles('${post._id}')" href="#" class="btn" data-bs-toggle="modal" data-bs-target="#newsDetailModal"><i class="fa-solid fa-arrow-right"></i></button>
+                    <p class="px-5"> <i class="fa-regular fa-eye"></i> ${post.total_view === null ? 'No watching': post.total_view}</p>
+                    <button onclick="newsDeteles('${post._id}')" href="#" class="btn px-5" data-bs-toggle="modal" data-bs-target="#newsDetailModal"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
                 </div>
             </div>
