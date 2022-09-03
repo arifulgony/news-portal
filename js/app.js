@@ -25,13 +25,13 @@ const displayPost =(posts) =>{
 
 loadPosts();
 
-function loadNewsDetails(id){
+const loadNewsDetails= (id) =>{
     fetch(`https://openapi.programming-hero.com/api/news/category/${id}`)
     .then(res =>res.json())
     .then(data => displaypage(data))
 }
 
-function displaypage(posts){ 
+const displaypage =(posts)=>{ 
     const postsContainer =document.getElementById('news-card');
     const countData = document.getElementById("count");
     countData.innerText=posts.data.length;
