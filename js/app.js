@@ -20,7 +20,6 @@ const displayPost =(posts) =>{
               `;
        postsContainer.appendChild(postDiv);
     }
-    
 }
 
 loadPosts();
@@ -59,8 +58,8 @@ const displaypage =(posts)=>{
                 <p class="card-text"> ${post.details.slice(0, 300)}</p>
                 <div class="d-lg-flex d-sm-block  justify-content-between mt-5">
                 <h5 class="card-text"><img src="${post.author.img}" alt="mdo" width="32" height="32" class="rounded-circle">
-                 ${post.author.name === null ? 'No Found.':post.author.name }</h5>
-                    <p class="px-5"> <i class="fa-regular fa-eye"></i> ${post.total_view === null ? 'No watching': post.total_view}</p>
+                 ${post.author.name  ? post.author.name: 'No Found.' }</h5>
+                    <p class="px-5"> <i class="fa-regular fa-eye"></i> ${post.total_view ? post.total_view: 'No watching' }</p>
                     <button onclick="newsDeteles('${post._id}')" href="#" class="btn px-5" data-bs-toggle="modal" data-bs-target="#newsDetailModal"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
                 </div>
@@ -71,6 +70,14 @@ const displaypage =(posts)=>{
     }
     toggleSpinner(false); 
    
+}
+
+
+const processNews = (dataLimit) =>{
+    toggleSpinner(true);
+    const reloadPost = posts();
+    loadPhones(reloadPost,dataLimit);
+
 }
 
 const toggleSpinner = isLoading => {
@@ -93,22 +100,17 @@ const newsDeteles =(id) =>{
 const displayNewsDetails = news =>{
 
     for(const post of news.data){
-    if(post.author.name){
-        const modalTitle = document.getElementById('newsDetailModalLabel');
+    const modalTitle = document.getElementById('newsDetailModalLabel');
     modalTitle.innerText = post.title;
     const newsDetails = document.getElementById('news-details');
     newsDetails.innerHTML = `
         <img src=${post.image_url} class="img-fluid w-100 rounded-start" alt="...">
-        <h3>${post.author.name}</h3>
+        <h3>Name: ${post.author.name ? post.author.name:"No Found." }</h3>
         <p> ${post.details} </p>
-    `
-    }else{
-        const newsDetails = document.getElementById('news-details');
-        newsDetails.innerHTML = `
-         <h1 class ="text-center">'No Found.'</h1>
-    `
+        <p class="px-5">Total view:  <i class="fa-regular fa-eye"></i> ${post.total_view ? post.total_view:'No watching'}</p>
+   ` 
     }
-}
+
 
 }
 loadNewsDetails("04")
