@@ -38,7 +38,7 @@ const displaypage =(posts)=>{
     postsContainer.textContent = '';
     if(posts.data.length === 0){
         // console.log('not found')
-        postsContainer.innerHTML =` <h2 class="text-2xl mt-5 pt-5 text-warning text-center">Not Found</h2>`
+        postsContainer.innerHTML =` <h2 class="text-2xl mt-5 pt-5 alard text-warning text-center">Not Found</h2>`
 
         return;
     }
