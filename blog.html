@@ -4,82 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>today news</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="n-letter-logo-template-vector-11180435.jpg">
     <!-- bootstrap link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="js/app.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- font-awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <!-- css lnk  -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header class="p-3 mb-3">
-        <div class="container">
-          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="#" class="nav-link px-2 link-dark"><h3>Shuvo</h3></a></li>
-            </ul>
-    
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-              <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                  <li><a href="index.html" class="nav-link px-2 link-dark text-primary">News</a></li>
-                  <li><a href="#" class="nav-link px-2 link-dark ">Block</a></li>
-                </ul>
-            </form>
-    
-            <div class="dropdown text-end">
-              <a href="#" class="d-block link-dark text-decoration-none " data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="img/client-pic-5.png" alt="mdo" width="32" height="32" class="rounded-circle">
-              </a>
-            </div>
+<body class="bg-light">
+  <header class="container">
+    <nav class="navbar navbar-light  p-2 fw-bolder">
+        <div class="container-fluid">
+          <a class="navbar-brand fs-1">TODAY NEWS</a>
+          <div class="d-flex fs-5">
+            <a href="index.html"  style="text-decoration: none;">News</a>
+            <a href="blog.html"class="mx-2"  style="text-decoration: none;">Blog</a>
           </div>
         </div>
-        <hr class="bg-dark">
-      </header>
-      <section>
-        <div class="container">
-            <div class="card text-center my-3">
-                <div class="card-body bg-dark text-white">
-                  <h3 class="card-title text-primary">What is Var and Let Differences </h3>
-                    <h5>Var</h5>
-                  <p class="card-text">In the creation phase, the JavaScript engine assigns storage spaces to var variables and immediately initializes them to undefined.
-                    In the execution phase, the JavaScript engine assigns the var variables the values specified by the assignments if there are ones. Otherwise, the var variables remain undefined.</p>
+      </nav>
+      <hr class="bg-dark">
+  </header>
+  <section>
+    <div class="container">
+        <div class="card text-center my-3">
+            <div class="card-body bg-dark text-white">
+              <h3 class="card-title text-primary">What is Var and Let Differences </h3>
+                <h5>Var</h5>
+              <p class="card-text">In the creation phase, the JavaScript engine assigns storage spaces to var variables and immediately initializes them to undefined.
+                In the execution phase, the JavaScript engine assigns the var variables the values specified by the assignments if there are ones. Otherwise, the var variables remain undefined.</p>
 
-                    <h5>Let</h5>
-                    <p class="card-text">In the creation phase, the JavaScript engine assigns storage spaces to the let variables but does not initialize the variables. Referencing uninitialized variables will cause a ReferenceError.The let variables have the same execution phase as the var variables.</p>
-                </div>
-              </div>
+                <h5>Let</h5>
+                <p class="card-text">In the creation phase, the JavaScript engine assigns storage spaces to the let variables but does not initialize the variables. Referencing uninitialized variables will cause a ReferenceError.The let variables have the same execution phase as the var variables.</p>
+            </div>
+          </div>
 
-              <div class="card text-center my-3">
-                <div class="card-body bg-dark text-white">
-                  <h3 class="card-title text-primary">What is Difference  Arrow  Functions and Regular Functions</h3>
-                  <h5>Arrow  Functions</h5>
-                  <p class="card-text">Arrow functions can never have duplicate named parameters, whether in strict or non-strict mode.However, We can use duplicate named parameters for regular function in non-strict mode.</p>
-                  <h5>Regular Functions</h5>
-                  <p class="card-text">Regular functions created using function declarations or expressions are constructible and callable. Regular functions are constructible; they can be called using the new keyword. However, the arrow functions are only callable and not constructible, i.e., arrow functions can never be used as constructor functions.</p>
-                </div>
-              </div>
-              <div class="card text-center my-3">
-                <div class="card-body bg-dark text-white">
-                  <h3 class="card-title text-primary"> What is difference  map, forEach, filter, find ?</h3>
-                  <h5>Map</h5>
-                  <p class="card-text">The map() method loops through each element in array and calls the provided function for each element. This method creates a new array and doesnt alter the original array</p>
-                  <h5>ForEach</h5>
-                  <p class="card-text">forEach() is used to execute the same code on every element in an array but does not change the array and it returns undefined.</p>
-                  <h5>Filter</h5>
-                  <p class="card-text">The filter() method in JavaScript creates a new array with the elements that satisfies the provided condition. This method calls a provided function for each element in array and verifies the condition given in the provided function and passes only those elements that satisfy the given condition.</p>
+          <div class="card text-center my-3">
+            <div class="card-body bg-dark text-white">
+              <h3 class="card-title text-primary">What is Difference  Arrow  Functions and Regular Functions</h3>
+              <h5>Arrow  Functions</h5>
+              <p class="card-text">Arrow functions can never have duplicate named parameters, whether in strict or non-strict mode.However, We can use duplicate named parameters for regular function in non-strict mode.</p>
+              <h5>Regular Functions</h5>
+              <p class="card-text">Regular functions created using function declarations or expressions are constructible and callable. Regular functions are constructible; they can be called using the new keyword. However, the arrow functions are only callable and not constructible, i.e., arrow functions can never be used as constructor functions.</p>
+            </div>
+          </div>
+          <div class="card text-center my-3">
+            <div class="card-body bg-dark text-white">
+              <h3 class="card-title text-primary"> What is difference  map, forEach, filter, find ?</h3>
+              <h5>Map</h5>
+              <p class="card-text">The map() method loops through each element in array and calls the provided function for each element. This method creates a new array and doesnt alter the original array</p>
+              <h5>ForEach</h5>
+              <p class="card-text">forEach() is used to execute the same code on every element in an array but does not change the array and it returns undefined.</p>
+              <h5>Filter</h5>
+              <p class="card-text">The filter() method in JavaScript creates a new array with the elements that satisfies the provided condition. This method calls a provided function for each element in array and verifies the condition given in the provided function and passes only those elements that satisfy the given condition.</p>
 
-                  <h5>Find</h5>
-                  <p class="card-text">The find() method returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.</p>
-                </div>
-              </div>
-              <div class="card text-center my-3">
-                <div class="card-body bg-dark text-white">
-                  <h3 class="card-title text-primary">Why template string uses?</h3>
-                  <p class="card-text">Along with having normal strings, template literals can also contain other parts called placeholders, which are embedded expressions delimited by a dollar sign and curly braces: ${expression}. The strings and placeholders get passed to a function — either a default function, or a function you supply. The default function (when you don't supply your own) just performs string interpolation to do substitution of the placeholders and then concatenate the parts into a single string.</p>
-                </div>
-              </div>
-        </div>
-      </section>
+              <h5>Find</h5>
+              <p class="card-text">The find() method returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.</p>
+            </div>
+          </div>
+          <div class="card text-center my-3">
+            <div class="card-body bg-dark text-white">
+              <h3 class="card-title text-primary">Why template string uses?</h3>
+              <p class="card-text">Along with having normal strings, template literals can also contain other parts called placeholders, which are embedded expressions delimited by a dollar sign and curly braces: ${expression}. The strings and placeholders get passed to a function — either a default function, or a function you supply. The default function (when you don't supply your own) just performs string interpolation to do substitution of the placeholders and then concatenate the parts into a single string.</p>
+            </div>
+          </div>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<!-- bootstrap link -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<!-- js link -->
+<script src="js/app.js"></script>
+
 </body>
 </html>
