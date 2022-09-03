@@ -29,6 +29,7 @@ const loadNewsDetails= (id) =>{
     fetch(`https://openapi.programming-hero.com/api/news/category/${id}`)
     .then(res =>res.json())
     .then(data => displaypage(data))
+    
 }
 
 const displaypage =(posts)=>{ 
@@ -42,8 +43,11 @@ const displaypage =(posts)=>{
 
         return;
     }
-    for(const post of posts.data){
+    const shortPost = posts.data.sort((a,b)=>b.total_view-a.total_view)
+    
+    for(const post of shortPost){
         const postDiv = document.createElement('row');
+        
         postDiv.innerHTML=`
             <div class="row my-4  p-2  " style="max-width: 100%; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
             <div class="col-md-4">
@@ -55,8 +59,8 @@ const displaypage =(posts)=>{
                 <p class="card-text"> ${post.details.slice(0, 300)}</p>
                 <div class="d-flex justify-content-between mt-5">
                 <h5 class="card-text"><img src="${post.author.img}" alt="mdo" width="32" height="32" class="rounded-circle">
-                 ${post.author.name}</h5>
-                    <p> <i class="fa-regular fa-eye"></i> ${post.total_view}</p>
+                 ${post.author.name === null ? 'No Found.':post.author.name }</h5>
+                    <p> <i class="fa-regular fa-eye"></i> ${post.total_view === null ? 'No watching': post.total_view}</p>
                     <button onclick="newsDeteles('${post._id}')" href="#" class="btn" data-bs-toggle="modal" data-bs-target="#newsDetailModal"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
                 </div>
@@ -89,17 +93,24 @@ const newsDeteles =(id) =>{
 const displayNewsDetails = news =>{
 
     for(const post of news.data){
-    const modalTitle = document.getElementById('newsDetailModalLabel');
+    if(post.author.name){
+        const modalTitle = document.getElementById('newsDetailModalLabel');
     modalTitle.innerText = post.title;
     const newsDetails = document.getElementById('news-details');
     newsDetails.innerHTML = `
-        <img src=${post.image_url} class="img-fluid rounded-start" alt="...">
+        <img src=${post.image_url} class="img-fluid w-100 rounded-start" alt="...">
+        <h3>${post.author.name}</h3>
         <p> ${post.details} </p>
     `
+    }else{
+        const newsDetails = document.getElementById('news-details');
+        newsDetails.innerHTML = `
+         <h1 class ="text-center">'No Found.'</h1>
+    `
+    }
 }
 
 }
-
-
+loadNewsDetails("04")
 
 
