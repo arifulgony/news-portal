@@ -25,9 +25,6 @@ const displayPost =(posts) =>{
 
 loadPosts();
 
-
-
-
 function loadNewsDetails(id){
     fetch(`https://openapi.programming-hero.com/api/news/category/${id}`)
     .then(res =>res.json())
@@ -81,8 +78,6 @@ const toggleSpinner = isLoading => {
         loaderSection.classList.add('d-none');
     }
 }
-
-
 
 const newsDeteles =(id) =>{
     fetch(`https://openapi.programming-hero.com/api/news/${id}`)
