@@ -38,7 +38,13 @@ function displaypage(posts){
     const postsContainer =document.getElementById('news-card');
     const countData = document.getElementById("count");
     countData.innerText=posts.data.length;
-    postsContainer .textContent = '';
+    postsContainer.textContent = '';
+    if(posts.data.length === 0){
+        // console.log('not found')
+        postsContainer.innerHTML =` <h2 class="text-2xl mt-5 pt-5 text-warning text-center">Not Found</h2>`
+
+        return;
+    }
     for(const post of posts.data){
         const postDiv = document.createElement('row');
         postDiv.innerHTML=`
@@ -51,7 +57,8 @@ function displaypage(posts){
                 <h5 class="card-title">${post.title}</h5>
                 <p class="card-text"> ${post.details.slice(0, 300)}</p>
                 <div class="d-flex justify-content-between mt-5">
-                <h5 class="card-text"> ${post.author.name}</h5>
+                <h5 class="card-text"><img src="${post.author.img}" alt="mdo" width="32" height="32" class="rounded-circle">
+                 ${post.author.name}</h5>
                     <p> <i class="fa-regular fa-eye"></i> ${post.total_view}</p>
                     <button onclick="newsDeteles('${post._id}')" href="#" class="btn" data-bs-toggle="modal" data-bs-target="#newsDetailModal"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
